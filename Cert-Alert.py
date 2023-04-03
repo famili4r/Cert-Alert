@@ -48,7 +48,7 @@ def main():
         cert = x509.load_pem_x509_certificate(certdata)
         expdate = cert.not_valid_after.date()
 
-        if expdate >= alertdate:
+        if expdate <= alertdate:
 
             message = MIMEMultipart("alternative")
             message["Subject"] = server + " Certificate expiring soon!"
