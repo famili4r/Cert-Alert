@@ -36,7 +36,7 @@ def main():
         reader = csv.reader(load_file, delimiter=" ")
         data = [tuple(row) for row in reader]
         servers, ports = zip(*data)
-
+    load_file.close()
 
     today = datetime.datetime.now().date()
     delta = datetime.timedelta(days = 14)
